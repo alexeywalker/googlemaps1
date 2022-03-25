@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GoogleMaps1</string>
+    <string name="firebase_url">"https://helpua-538fa-default-rtdb.europe-west1.firebasedatabase.app"</string>
+</resources>
