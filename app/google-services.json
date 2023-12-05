@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "251256585491",
-    "firebase_url": "https://helpua-538fa-default-rtdb.europe-west1.firebasedatabase.app",
-    "project_id": "helpua-538fa",
-    "storage_bucket": "helpua-538fa.appspot.com"
+    "project_number": "1039291253660",
+    "firebase_url": "https://maps-6be39-default-rtdb.europe-west1.firebasedatabase.app",
+    "project_id": "maps-6be39",
+    "storage_bucket": "maps-6be39.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:251256585491:android:902da5cb2e415746ea2ee6",
+        "mobilesdk_app_id": "1:1039291253660:android:67929581b130ccab607e59",
         "android_client_info": {
           "package_name": "com.example.googlemaps1"
         }
       },
       "oauth_client": [
         {
-          "client_id": "251256585491-u8cav1cj8d74m8ngvuergt97bnv126hf.apps.googleusercontent.com",
+          "client_id": "1039291253660-apdm0j4aqtlcok6ttfbgq3eqm3o70p2e.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.googlemaps1",
@@ -23,20 +23,20 @@
           }
         },
         {
-          "client_id": "251256585491-krk7hl7takg5km5q125p2uspnpvl0ok3.apps.googleusercontent.com",
+          "client_id": "1039291253660-kdc5mspi6dnfqbp9l0h40fiq2k5ketl2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyD98xvwevtfHCfrsTjpgKQ8Z_gMpSH-j-0"
+          "current_key": "AIzaSyCblb-9NkRfBAR8Yt7eQcCI07eieE2ScQQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "251256585491-krk7hl7takg5km5q125p2uspnpvl0ok3.apps.googleusercontent.com",
+              "client_id": "1039291253660-kdc5mspi6dnfqbp9l0h40fiq2k5ketl2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

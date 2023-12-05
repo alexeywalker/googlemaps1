@@ -1,7 +1,7 @@
 package com.example.googlemaps1.presentation
 
 import com.google.maps.android.compose.MapProperties
-import com.example.googlemaps1.domain.model.ParkingSpot
+import com.example.googlemaps1.domain.model.MSpot
 
 data class MapState(
     val properties: MapProperties = MapProperties(
@@ -9,5 +9,5 @@ data class MapState(
         maxZoomPreference = 21.0f,
         minZoomPreference = 3.0f
     ),
-    val parkingSpots: List<ParkingSpot> = emptyList(),
+    val mSpots: List<MSpot> = emptyList(),
 )

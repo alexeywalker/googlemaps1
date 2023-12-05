@@ -2,9 +2,9 @@ package com.example.googlemaps1.di
 
 import android.app.Application
 import androidx.room.Room
-import com.example.googlemaps1.data.ParkingSpotDatabase
-import com.example.googlemaps1.data.ParkingSpotRepositoryImpl
-import com.example.googlemaps1.domain.repository.ParkingSpotRepository
+import com.example.googlemaps1.data.MSpotDatabase
+import com.example.googlemaps1.data.MSpotRepositoryImpl
+import com.example.googlemaps1.domain.repository.MSpotRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,17 +17,17 @@ object AppModule {
 
     @Singleton
     @Provides
-    fun provideParkingSpotDatabase(app: Application): ParkingSpotDatabase {
+    fun provideMSpotDatabase(app: Application): MSpotDatabase {
         return Room.databaseBuilder(
             app,
-            ParkingSpotDatabase::class.java,
+            MSpotDatabase::class.java,
             "parking_spots.db"
         ).build()
     }
 
     @Singleton
     @Provides
-    fun provideParkingSpotRepository(db: ParkingSpotDatabase): ParkingSpotRepository {
-        return ParkingSpotRepositoryImpl(db.dao)
+    fun provideMSpotRepository(db: MSpotDatabase): MSpotRepository {
+        return MSpotRepositoryImpl(db.dao)
     }
 }

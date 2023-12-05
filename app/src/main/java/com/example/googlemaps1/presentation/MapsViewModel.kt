@@ -5,8 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.googlemaps1.domain.model.ParkingSpot
-import com.example.googlemaps1.domain.repository.ParkingSpotRepository
+import com.example.googlemaps1.domain.model.MSpot
+import com.example.googlemaps1.domain.repository.MSpotRepository
 import com.google.firebase.database.FirebaseDatabase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collectLatest
@@ -15,15 +15,15 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MapsViewModel @Inject constructor(
-    private val repository: ParkingSpotRepository
+    private val repository: MSpotRepository
 ) : ViewModel() {
 
     var state by mutableStateOf(MapState())
     init {
         viewModelScope.launch {
-            repository.getParkingSpots().collectLatest { spots ->
+            repository.getMSpots().collectLatest { spots ->
                 state = state.copy(
-                    parkingSpots = spots
+                    mSpots = spots
                 )
             }
         }
@@ -31,26 +31,29 @@ class MapsViewModel @Inject constructor(
 
     fun onEvent(event: MapEvent) {
         when (event) {
+            is MapEvent.Form -> {
+
+            }
             is MapEvent.OnMapLongClick -> {
-                val database = FirebaseDatabase.getInstance("https://helpua-538fa-default-rtdb.europe-west1.firebasedatabase.app")
+                val database = FirebaseDatabase.getInstance()
                 val myRef = database.getReference("location")
                 viewModelScope.launch {
-                    myRef.setValue(ParkingSpot(
+                    myRef.setValue(MSpot(
                         event.latLng.latitude,
                         event.latLng.longitude
                     ))
-//                    repository.insertParkingSpot(
-//                        ParkingSpot(
-//                            event.latLng.latitude,
-//                            event.latLng.longitude
-//                        )
-//                    )
+                    repository.insertMSpot(
+                        MSpot(
+                            event.latLng.latitude,
+                            event.latLng.longitude
+                        )
+                    )
                 }
             }
             is MapEvent.OnInfoWindowLongClick -> {
 
                 viewModelScope.launch {
-                    repository.deleteParkingSpot(event.spot)
+                    repository.deleteMSpot(event.spot)
                 }
             }
         }
