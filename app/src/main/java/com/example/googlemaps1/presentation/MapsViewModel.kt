@@ -19,6 +19,7 @@ class MapsViewModel @Inject constructor(
 ) : ViewModel() {
 
     var state by mutableStateOf(MapState())
+
     init {
         viewModelScope.launch {
             repository.getMSpots().collectLatest { spots ->
@@ -34,14 +35,17 @@ class MapsViewModel @Inject constructor(
             is MapEvent.Form -> {
 
             }
+
             is MapEvent.OnMapLongClick -> {
                 val database = FirebaseDatabase.getInstance()
                 val myRef = database.getReference("location")
                 viewModelScope.launch {
-                    myRef.setValue(MSpot(
-                        event.latLng.latitude,
-                        event.latLng.longitude
-                    ))
+                    myRef.setValue(
+                        MSpot(
+                            event.latLng.latitude,
+                            event.latLng.longitude
+                        )
+                    )
                     repository.insertMSpot(
                         MSpot(
                             event.latLng.latitude,
@@ -50,6 +54,7 @@ class MapsViewModel @Inject constructor(
                     )
                 }
             }
+
             is MapEvent.OnInfoWindowLongClick -> {
 
                 viewModelScope.launch {

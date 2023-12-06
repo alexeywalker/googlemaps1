@@ -7,7 +7,6 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.example.googlemaps1.presentation.MapScreen
-import com.example.googlemaps1.presentation.SignUp
 import com.example.googlemaps1.ui.theme.MapsComposeGuideTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -21,7 +20,6 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                 ) {
-//                    SignUp()
                     MapScreen()
                 }
             }

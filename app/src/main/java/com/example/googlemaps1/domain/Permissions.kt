@@ -62,6 +62,7 @@ class Permissions {
                                 perm.status.isGranted -> {
                                     Text(text = "Location permissions accepted")
                                 }
+
                                 perm.status.shouldShowRationale -> {
                                     Text(
                                         text = "Location permissions needed" +
@@ -70,11 +71,13 @@ class Permissions {
                                 }
                             }
                         }
+
                         Manifest.permission.ACCESS_FINE_LOCATION -> {
                             when {
                                 perm.status.isGranted -> {
                                     Text(text = "Location permissions accepted")
                                 }
+
                                 perm.status.shouldShowRationale -> {
                                     Text(
                                         text = "Location permissions needed" +

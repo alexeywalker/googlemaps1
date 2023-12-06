@@ -7,7 +7,7 @@ import androidx.room.RoomDatabase
     entities = [MSpotEntity::class],
     version = 1
 )
-abstract class MSpotDatabase: RoomDatabase() {
+abstract class MSpotDatabase : RoomDatabase() {
 
     abstract val dao: MSpotDao
 }

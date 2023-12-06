@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.map
 
 class MSpotRepositoryImpl(
     private val dao: MSpotDao
-): MSpotRepository {
+) : MSpotRepository {
 
     override suspend fun insertMSpot(spot: MSpot) {
         dao.insertParkingSpot(spot.toMSpotEntity())
